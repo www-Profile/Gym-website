@@ -1,6 +1,6 @@
 {
-  "name": "RECORD — Спортзал",
-  "short_name": "RECORD",
+  "name": "Gym — Спортзал",
+  "short_name": "Gym",
   "description": "Просторный зал, свободные веса и атмосфера настоящего спорта в Санкт-Петербурге.",
   "start_url": "./",
   "scope": "./",
