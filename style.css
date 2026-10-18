@@ -23,6 +23,12 @@ body {
     padding: 0 20px;
 }
 
+.container-price {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -602,7 +608,7 @@ h1, h2, h3, .logo, .btn, .nav-link {
         margin-bottom: 10px;
     }
     .price-card-list li {
-        font-size: 6px;
+        font-size: 8px;
         padding: 4px 0;
         line-height: 1.2;
     }
@@ -684,7 +690,7 @@ h1, h2, h3, .logo, .btn, .nav-link {
     .price-card-title { font-size: 10px; margin-bottom: 4px; }
     .price-card-value { font-size: 14px; margin-bottom: 6px; }
     .price-card-list { margin-bottom: 6px; }
-    .price-card-list li { font-size: 5px; padding: 3px 0; }
+    .price-card-list li { font-size: 7px; padding: 3px 0; }
     .price-card .btn { font-size: 8px; padding: 4px 2px; }
     .price-card-badge { font-size: 6px; padding: 2px 5px; top: -6px; }
 
