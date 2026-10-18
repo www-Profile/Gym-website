@@ -187,8 +187,8 @@ h1, h2, h3, .logo, .btn, .nav-link {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
-    max-width: 900px;
-    height: 700px;
+    max-width: 800px;
+    height: 400px;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 50%;
     filter: blur(40px);
@@ -250,13 +250,9 @@ h1, h2, h3, .logo, .btn, .nav-link {
     color: #e63946;
 }
 .btn-secondary {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-}
-.btn-secondary:hover {
     background: #fff;
     color: #0a0a0a;
+    border: 2px solid #fff;
 }
 
 /* === БЛОК "О НАС" === */
@@ -293,31 +289,31 @@ h1, h2, h3, .logo, .btn, .nav-link {
     color: #aaa;
 }
 
-/* === НОВАЯ ГАЛЕРЕЯ (4 фото по центру) === */
+/* === НОВАЯ ГАЛЕРЕЯ (6 фото по центру) === */
 .gallery {
     padding: 80px 0;
     background: #0f0f0f;
 }
 
-.gallery-grid-4 {
+.gallery-grid-6 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 40px auto 0;
     padding: 0 20px;
 }
 
-.gallery-card {
-    flex: 0 0 calc(50% - 30px);
-    max-width: 400px;
-    text-align: center;
-    transition: transform 0.3s;
+.gallery-grid-6 .gallery-card {
+    flex: 0 0 calc(33.333% - 30px); /* По 3 в ряд на десктопе */
+    max-width: 350px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
 }
 
 .gallery-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
 }
 
 .gallery-image {
@@ -333,12 +329,15 @@ h1, h2, h3, .logo, .btn, .nav-link {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: all 0.5s ease;
-    filter: grayscale(0.7) sepia(0.2) brightness(0.9) contrast(1.1);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: grayscale(0.1) sepia(0.2) brightness(0.9) contrast(1.1);
+    will-change: transform, filter;
+    backface-visibility: hidden;
 }
 
 .gallery-card:hover img {
-    filter: grayscale(0.4) sepia(0.1) brightness(1) contrast(1.1);
+    filter: grayscale(0) sepia(0.1) brightness(1) contrast(1.1);
     transform: scale(1.05);
 }
 
@@ -353,6 +352,20 @@ h1, h2, h3, .logo, .btn, .nav-link {
     border-bottom: 2px solid #e63946;
     display: inline-block;
     padding-bottom: 5px;
+}
+
+/* Адаптация */
+@media (max-width: 992px) {
+    .gallery-grid-6 .gallery-card {
+        flex: 0 0 calc(50% - 30px); /* По 2 в ряд */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid-6 .gallery-card {
+        flex: 0 0 100%; /* По 1 в ряд */
+        max-width: 450px;
+    }
 }
 
 /* === ЦЕНЫ === */
@@ -500,63 +513,193 @@ h1, h2, h3, .logo, .btn, .nav-link {
 }
 
 /* === АДАПТИВНОСТЬ === */
+
 @media (max-width: 992px) {
-    .hero-title { 
-        font-size: 48px; 
-    }
+    .hero-title { font-size: 48px; }
 }
 
 @media (max-width: 768px) {
-    .nav {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        padding: 20px 0;
-        background: #0f0f0f;
-        border-top: 1px solid #e63946;
-    }
-    .nav.active {
-        display: flex;
+    /* --- ШАПКА: УБИРАЕМ МЕНЮ И БУРГЕР --- */
+    .nav, .burger {
+        display: none !important; /* Полностью скрываем на телефоне */
     }
     .header-phone {
         display: none;
     }
-    .burger {
-        display: flex;
+    .header-container {
+        justify-content: center; /* Логотип по центру */
     }
-    .hero-title { 
-        font-size: 36px; 
+
+    /* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
+    .hero { min-height: 60vh; }
+    .hero-title { font-size: 26px; margin-bottom: 10px; }
+    .hero-subtitle { font-size: 14px; margin-bottom: 20px; padding: 0 10px; }
+    .hero-content .btn { padding: 10px 20px; font-size: 14px; }
+    .hero-text-background { height: 220px; filter: blur(30px); }
+
+    /* --- ПОЧЕМУ RECORD (ПО 2 В РЯД) --- */
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr); /* Строго 2 колонки */
+        gap: 10px;
     }
-    .hero-subtitle { 
-        font-size: 16px; 
+    .about-item {
+        padding: 12px 8px;
     }
-    .hero-text-background {
-        height: 320px;
-        width: 95%;
-        filter: blur(35px);
+    .about-icon {
+        font-size: 28px;
+        margin-bottom: 8px;
     }
-    .hero {
-        min-height: 70vh;
+    .about-item h3 {
+        font-size: 14px;
+        margin-bottom: 6px;
+        line-height: 1.2;
     }
-    .contact-grid { 
-        grid-template-columns: 1fr; 
+    .about-item p {
+        font-size: 8px;
+        line-height: 1.3;
     }
-    .price-card--pro { 
-        transform: scale(1); 
+
+    /* --- НАШ ЗАЛ (ПО 2 В РЯД) --- */
+    .gallery-grid-6 {
+        gap: 10px;
+        padding: 0 10px;
+        margin-top: 20px;
     }
-    .gallery-card {
-        flex: 0 0 100%;
-        max-width: 450px;
+    .gallery-grid-6 .gallery-card {
+        flex: 0 0 calc(50% - 5px);
+        max-width: none;
     }
     .gallery-image {
-        height: 250px;
+        height: 120px;
+        border-radius: 10px;
+    }
+    .gallery-caption {
+        font-size: 12px;
+        letter-spacing: 1px;
+        margin-top: 8px;
+        padding-bottom: 2px;
+    }
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    /* --- НАШИ ЦЕНЫ (3 В 1 СТРОКУ) --- */
+    .price-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+    .price-card {
+        padding: 10px 5px;
+        border-radius: 8px;
+    }
+    .price-card-title {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+    .price-card-value {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .price-card-list {
+        margin-bottom: 10px;
+    }
+    .price-card-list li {
+        font-size: 6px;
+        padding: 4px 0;
+        line-height: 1.2;
+    }
+    .price-card .btn {
+        padding: 0px 4px;
+        font-size: 10px;
+        letter-spacing: 0;
+    }
+    .price-card--pro {
+        transform: scale(1);
+        box-shadow: none;
+    }
+    .price-card-badge {
+        font-size: 8px;
+        padding: 3px 8px;
+        top: -8px;
+    }
+
+    /* --- СВЯЖИСЬ С НАМИ (2 В 1 СТРОКУ) --- */
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .contact-info h2 {
+        font-size: 8px;
+        margin-bottom: 8px;
+    }
+    .contact-item {
+        font-size: 6px;
+        margin-bottom: 5px;
+    }
+    .contact-info i {
+        font-size: 12px;
+        width: 15px;
+    }
+    .contact-info br {
+        display: none;
+    }
+    .social-links {
+        margin-top: 10px;
+        gap: 10px;
+    }
+    .social-links a {
+        font-size: 20px;
+    }
+    .contact-map iframe {
+        height: 180px;
+    }
+    
+    .footer p {
+        font-size: 12px;
     }
 }
 
-@media (max-width: 480px) {
-    .section-title { 
-        font-size: 32px; 
-    }
+@media (max-width: 380px) {
+    /* --- ГЛАВНЫЙ ЭКРАН --- */
+    .hero-title { font-size: 22px; }
+    .hero-subtitle { font-size: 12px; }
+    .hero-content .btn { padding: 8px 16px; font-size: 12px; }
+    .hero-text-background { height: 180px; filter: blur(25px); }
+
+    /* --- ПОЧЕМУ RECORD --- */
+    .about-grid { gap: 8px; }
+    .about-item { padding: 10px 6px; }
+    .about-icon { font-size: 22px; margin-bottom: 5px; }
+    .about-item h3 { font-size: 12px; }
+    .about-item p { font-size: 7px; }
+
+    /* --- НАШ ЗАЛ --- */
+    .gallery-grid-6 { gap: 8px; padding: 0 5px; }
+    .gallery-grid-6 .gallery-card { flex: 0 0 calc(50% - 4px); }
+    .gallery-image { height: 90px; }
+    .gallery-caption { font-size: 10px; letter-spacing: 0; }
+    .section-title { font-size: 24px; margin-bottom: 20px; }
+
+    /* --- НАШИ ЦЕНЫ --- */
+    .price-grid { gap: 3px; }
+    .price-card { padding: 6px 3px; border-radius: 6px; }
+    .price-card-title { font-size: 10px; margin-bottom: 4px; }
+    .price-card-value { font-size: 14px; margin-bottom: 6px; }
+    .price-card-list { margin-bottom: 6px; }
+    .price-card-list li { font-size: 5px; padding: 3px 0; }
+    .price-card .btn { font-size: 8px; padding: 4px 2px; }
+    .price-card-badge { font-size: 6px; padding: 2px 5px; top: -6px; }
+
+    /* --- СВЯЖИСЬ С НАМИ --- */
+    .contact-grid { gap: 6px; }
+    .contact-info h2 { font-size: 7px; margin-bottom: 4px; }
+    .contact-item { font-size: 5px; margin-bottom: 3px; }
+    .contact-info i { font-size: 9px; width: 12px; margin-right: 5px; }
+    .social-links { margin-top: 6px; gap: 8px; }
+    .social-links a { font-size: 16px; }
+    .contact-map iframe { height: 120px; }
+    
+    /* --- ПОДВАЛ --- */
+    .footer p { font-size: 10px; }
 }

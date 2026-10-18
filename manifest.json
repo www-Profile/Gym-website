@@ -1,0 +1,13 @@
+{
+  "name": "RECORD — Спортзал",
+  "short_name": "RECORD",
+  "description": "Просторный зал, свободные веса и атмосфера настоящего спорта в Санкт-Петербурге.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0a0a",
+  "theme_color": "#e63946",
+  "lang": "ru",
+  "dir": "ltr"
+}

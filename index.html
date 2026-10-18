@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>АРСЕНАЛ — Твой результат</title>
-    <!-- Подключаем CSS -->
+    <title>RECORD — твой результат</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e63946">
     <link rel="stylesheet" href="style.css">
-    <!-- Подключаем шрифт для эстетики (необязательно, но круто) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <!-- Подключаем Font Awesome для иконок (соцсети, иконки удобства) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <!-- ШАПКА (Навигация) -->
+    <!-- ШАПКА -->
     <header class="header">
         <div class="container header-container">
             <div class="logo">
-                <span class="logo-bold">АРСЕНАЛ</span>
+                <span class="logo-bold">RE</span>CORD
             </div>
             <nav class="nav" id="navMenu">
                 <a href="#hero" class="nav-link">Главная</a>
@@ -29,9 +28,8 @@
                 <a href="#contact" class="nav-link">Контакты</a>
             </nav>
             <div class="header-phone">
-                <a href="tel:+79856443453" class="phone-link">+7 (985) 644-34-53</a>
+                <a href="tel:+79999999999" class="phone-link">+7 (999) 999-99-99</a>
             </div>
-            <!-- Кнопка для мобильного меню (будет видна только на телефонах) -->
             <div class="burger" id="burger">
                 <span></span>
                 <span></span>
@@ -40,82 +38,127 @@
         </div>
     </header>
 
-    <!-- ГЛАВНЫЙ ЭКРАН (Hero) с большим фоном -->
+    <!-- ГЛАВНЫЙ ЭКРАН -->
     <section class="hero" id="hero">
         <div class="hero-image-container">
-            <img src="images/9K2fv-esoos.jpg" alt="Зал Iron Base" class="hero-image">
-        <div class="hero-overlay"></div>
-    </div>
+            <img src="images/sport.webp" alt="Зал Record" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
         <div class="container hero-content">
             <div class="hero-text-background"></div>
-            <h1 class="hero-title">СТАНЬ СИЛЬНЕЕ <br><span>С АРСЕНАЛОМ</span></h1>
-            <p class="hero-subtitle">Свободные веса, профессиональный «железный» зал и атмосфера настоящего спорта. Твой результат начинается здесь.</p>
+            <h1 class="hero-title">СТАВЬ <span>РЕКОРДЫ</span></h1>
+            <p class="hero-subtitle">Просторный зал, свободные веса и атмосфера настоящего спорта в вашем городе.</p>
             <a href="#price" class="btn btn-primary">Выбрать абонемент</a>
         </div>
     </section>
 
-    <!-- БЛОК О НАС (Коротко и по делу) -->
+    <!-- О НАС -->
     <section class="about" id="about">
         <div class="container">
-            <h2 class="section-title">ПОЧЕМУ <span>АРСЕНАЛ</span></h2>
-            <div class="about-grid">
-                <div class="about-item">
-                    <i class="fas fa-dumbbell about-icon"></i>
-                    <h3>3 Тонны железа</h3>
-                    <p>Гантельные ряды до 60 кг, диски, штанги, стойки для приседаний — всё, чтобы прогрессировать.</p>
-                </div>
-                <div class="about-item">
-                    <i class="fas fa-users about-icon"></i>
-                    <h3>Тренеры-практики</h3>
-                    <p>Действующие спортсмены, которые сами поднимают тяжёлое. Никакой воды — только техника и результат.</p>
-                </div>
+            <h2 class="section-title">ПОЧЕМУ <span>RECORD</span></h2>
+<div class="about-grid">
+    <!-- 1. Свободные веса -->
+    <div class="about-item">
+        <i class="fas fa-dumbbell about-icon"></i>
+        <h3>СВОБОДНЫЕ ВЕСА</h3>
+        <p>Гантели до 50 кг, штанги, блины, стойки для приседа — всё для прогресса.</p>
+    </div>
+    
+    <!-- 2. Кардио зона (НОВОЕ) -->
+    <div class="about-item">
+        <i class="fas fa-heartbeat about-icon"></i>
+        <h3>КАРДИО ЗОНА</h3>
+        <p>Беговые дорожки, эллипсы, велотренажеры — для разминки и жиросжигания.</p>
+    </div>
+    
+    <!-- 3. Опытные тренеры -->
+    <div class="about-item">
+        <i class="fas fa-users about-icon"></i>
+        <h3>ОПЫТНЫЕ ТРЕНЕРЫ</h3>
+        <p>Помогут с техникой и составят программу под твои цели.</p>
+    </div>
+    
+<!-- 4. Фитнес для девушек -->
 <div class="about-item">
-    <i class="fas fa-clock about-icon"></i>
-    <h3>УДОБНОЕ ВРЕМЯ</h3>
-    <p>Пн-Пт: 10:00 - 22:00 | Сб-Вс: 9:00 - 21:00. Приходи в любое время в рамках расписания.</p>
+    <i class="fas fa-female about-icon"></i>
+    <h3>ФИТНЕС ДЛЯ ДЕВУШЕК</h3>
+    <p>Отдельная зона с тренажерами, ковриками и инвентарем для комфортных тренировок.</p>
 </div>
-            </div>
+    
+    <!-- 5. Душ и раздевалки -->
+    <div class="about-item">
+        <i class="fas fa-shower about-icon"></i>
+        <h3>ДУШ И РАЗДЕВАЛКИ</h3>
+        <p>Просторные раздевалки, индивидуальные ячейки, чистый душ после тренировки.</p>
+    </div>
+    
+    <!-- 6. Удобное расположение + время (НОВОЕ) -->
+    <div class="about-item">
+        <i class="fas fa-clock about-icon"></i>
+        <h3>УДОБНОЕ ВРЕМЯ</h3>
+        <p>Пн-Пт: 08:30–22:00 <br> Сб-Вс: 08:30–21:00.</p>
+    </div>
+</div>
         </div>
     </section>
 
-    <!-- ГАЛЕРЕЯ (4 фото по центру, стилизованные) -->
+    <!-- ГАЛЕРЕЯ -->
     <section class="gallery" id="gallery">
         <div class="container">
-            <h2 class="section-title">АТМОСФЕРА <span>ЖЕЛЕЗА</span></h2>
+            <h2 class="section-title">НАШ <span>ЗАЛ</span></h2>
         </div>
-        <div class="gallery-grid-4">
-            <!-- Фото 1 -->
-            <div class="gallery-card">
-                <div class="gallery-image">
-                    <img src="images/9K2fv-esoos.jpg" alt="Вид зала">
-                </div>
-                <p class="gallery-caption">РАБОЧИЙ ИНСТРУМЕНТ</p>
-            </div>
-            <!-- Фото 2 -->
-            <div class="gallery-card">
-                <div class="gallery-image">
-                    <img src="images/JlKlP6Td9lA.jpg" alt="Вид зала">
-                </div>
-                <p class="gallery-caption">МЕСТО СИЛЫ</p>
-            </div>
-            <!-- Фото 3 -->
-            <div class="gallery-card">
-                <div class="gallery-image">
-                    <img src="images/FeZDfkALOb4.jpg" alt="Вид зала"> 
-                </div>
-                <p class="gallery-caption">БЛИНЫ И ГРИФЫ</p>
-            </div>
-            <!-- Фото 4 -->
-            <div class="gallery-card">
-                <div class="gallery-image">
-                    <img src="images/gcav4nyeMJk.jpg" alt="Вид зала">
-                </div>
-                <p class="gallery-caption">СТАЛЬНОЙ ХАРАКТЕР</p>
-            </div>
+        <div class="gallery-grid-6">
+<!-- Фитнес зона -->
+<div class="gallery-card">
+    <div class="gallery-image">
+        <img src="images/FOTO.png" alt="Фитнес зона">
+    </div>
+    <p class="gallery-caption">ФИТНЕС ЗОНА</p>
+</div>
+    
+    <!-- Основной зал -->
+    <div class="gallery-card">
+        <div class="gallery-image">
+            <img src="images/FOTO.png" alt="Зал Record">
         </div>
+        <p class="gallery-caption">СВОБОДНЫЕ ВЕСА</p>
+    </div>
+    
+    <!-- Кардио зона -->
+    <div class="gallery-card">
+        <div class="gallery-image">
+            <img src="images/FOTO.png" alt="Зал Record">
+        </div>
+        <p class="gallery-caption">КАРДИО ЗОНА</p>
+    </div>
+    
+    <!-- Душ -->
+    <div class="gallery-card">
+        <div class="gallery-image">
+            <img src="images/FOTO.png" alt="Душ">
+        </div>
+        <p class="gallery-caption">ДУШЕВЫЕ</p>
+    </div>
+    
+    <!-- Раздевалка с ячейками -->
+    <div class="gallery-card">
+        <div class="gallery-image">
+            <img src="images/FOTO.png" alt="Раздевалка">
+        </div>
+        <p class="gallery-caption">РАЗДЕВАЛКА</p>
+    </div>
+    
+    <!-- Тренажеры -->
+    <div class="gallery-card">
+        <div class="gallery-image">
+            <img src="images/FOTO.png" alt="Гантели">
+        </div>
+        <p class="gallery-caption">ГАНТЕЛЬНЫЙ РЯД</p>
+    </div>
+</div>
     </section>
 
-    <!-- ЦЕНЫ (Максимально прозрачно) -->
+    <!-- ЦЕНЫ -->
     <section class="price" id="price">
         <div class="container">
             <h2 class="section-title">НАШИ <span>ЦЕНЫ</span></h2>
@@ -125,7 +168,7 @@
                     <p class="price-card-value">300 ₽</p>
                     <ul class="price-card-list">
                         <li>Без ограничения по времени</li>
-                        <li>Вход в любое время</li>
+                        <li>В любой день</li>
                         <li>Вода бесплатно</li>
                     </ul>
                     <a href="#contact" class="btn btn-secondary">ЗАПИСАТЬСЯ</a>
@@ -133,20 +176,20 @@
                 <div class="price-card price-card--pro">
                     <div class="price-card-badge">Хит</div>
                     <h3 class="price-card-title">Месяц</h3>
-                    <p class="price-card-value">2500 ₽</p>
+                    <p class="price-card-value">2000 ₽</p>
                     <ul class="price-card-list">
                         <li>Безлимит на 30 дней</li>
-                        <li>Тренировка с тренером 1 раз</li>
-                        <li>Доступ к "железному" залу</li>
+                        <li>Тренировка с тренером</li>
+                        <li>Заморозка абонемента</li>
                     </ul>
                     <a href="#contact" class="btn btn-primary">ЗАПИСАТЬСЯ</a>
                 </div>
                 <div class="price-card">
                     <h3 class="price-card-title">Год</h3>
-                    <p class="price-card-value">22 000 ₽</p>
+                    <p class="price-card-value">18 000 ₽</p>
                     <ul class="price-card-list">
-                        <li>Скидка 2 месяца в подарок</li>
-                        <li>Гостевой визит для друга</li>
+                        <li>2 месяца в подарок</li>
+                        <li>Гостевой визит друга</li>
                         <li>Фирменный браслет</li>
                     </ul>
                     <a href="#contact" class="btn btn-secondary">ЗАПИСАТЬСЯ</a>
@@ -155,29 +198,42 @@
         </div>
     </section>
 
-    <!-- КОНТАКТЫ (Карта + данные) -->
+    <!-- КОНТАКТЫ -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2 class="section-title">КАК НАС <span>НАЙТИ</span></h2>
+            <h2 class="section-title">СВЯЖИСЬ <span>С НАМИ</span></h2>
+            
             <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>ПОЗВОНИ, ЧТОБЫ ОБСУДИТЬ ДЕТАЛИ!</h2><br>
-                    <p><i class="fas fa-map-marker-alt"></i> г. Шлиссельбург, ул. Малоневский канал, д. 9</p>
-                    <p><i class="fas fa-phone"></i> <a href="tel:+79998887766">+7 (985) 644-34-53</a></p>
-                    <p><i class="fas fa-envelope"></i> info@ironbase.ru</p>
-<div class="contact-item">
-    <i class="fas fa-clock"></i>
-    <span>Пн-Пт 10:00-22:00 / Сб-Вс 9:00-21:00</span>
+                
+<div class="contact-info">
+    <h2>ПОЗВОНИ, ЧТОБЫ ОБСУДИТЬ ДЕТАЛИ!</h2><br>
+    <!-- Телефон -->
+    <div class="contact-item">
+        <i class="fas fa-phone"></i>
+            <a href="tel:+79006237074" class="contact-item-content">+7 (999) 999-99-99</a>
+    </div><br>
+    
+    <!-- Адрес -->
+    <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+            <span class="contact-item-content" >Санкт-Петербург</span>
+    </div><br>
+    
+    <!-- Время работы -->
+    <div class="contact-item">
+        <i class="fas fa-clock"></i>
+            <span class="contact-item-content">Пн-Пт: 08:30 - 22:00 | Сб-Вс: 08:30 - 21:00</span>
+    </div>
+    
+    <!-- Соцсети (только иконки, без текста) -->
+    <div class="social-links">
+        <a href="#" target="_blank"><i class="fab fa-vk"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
 </div>
-                    <div class="social-links">
-                        <a href="https://vk.com/arsenalfit"><i class="fab fa-vk"></i></a>
-                        <a><i class="fab fa-telegram"></i></a>
-                        <a><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
+                
                 <div class="contact-map">
-                    <!-- Заглушка карты. Можно заменить на iframe Яндекс Карт -->
-                    <iframe src="https://yandex.ru/map-widget/v1/?ll=32.019797%2C59.934280&z=17&pt=32.019797%2C59.934280&mode=search&text=%D0%A8%D0%BB%D0%B8%D1%81%D1%81%D0%B5%D0%BB%D1%8C%D0%B1%D1%83%D1%80%D0%B3%2C%20%D1%83%D0%BB.%20%D0%9C%D0%B0%D0%BB%D0%BE%D0%BD%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%2C%209" width="100%" height="320" frameborder="0"></iframe>
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=30.314130%2C59.938806&z=12&l=map" width="100%" height="400" frameborder="0" allowfullscreen="true"></iframe>
                 </div>
             </div>
         </div>
@@ -186,11 +242,10 @@
     <!-- ПОДВАЛ -->
     <footer class="footer">
         <div class="container">
-            <p>© 2026 Арсенал. Все для силовых тренировок.</p>
+            <p>© 2026 RECORD. Спортзал в Санкт-Петербурге.</p>
         </div>
     </footer>
 
-    <!-- Подключаем JS -->
     <script src="script.js"></script>
 </body>
 </html>
